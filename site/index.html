@@ -22,45 +22,50 @@
   расчёт до числа по Правилам Российского морского регистра судоходства.</p>
 
   <div class="panel">
-    <svg viewBox="0 0 640 340" class="geo-board" style="max-width:640px" role="img" aria-label="Общая схема конструкции корпуса судна с названиями районов">
+    <svg viewBox="0 0 640 340" class="geo-board" style="max-width:640px" role="img" aria-label="Общая схема конструкции корпуса надводного судна с названиями районов">
       <text x="320" y="20" text-anchor="middle" style="font:600 12px system-ui;fill:#16161a">Из чего состоит корпус: карта курса</text>
-      <!-- профиль судна -->
-      <path d="M 70 150 L 520 150 L 570 158 L 600 180 L 570 214 L 520 224 L 70 224 L 46 210 L 46 164 Z"
+      <!-- профиль надводного судна: транцевая корма слева, наклонный форштевень справа -->
+      <path d="M 62 146 L 596 132 L 566 210 Q 556 226 538 228 L 96 228 Q 76 228 72 218 Z"
             fill="#155e75" fill-opacity=".06" stroke="#16161a" stroke-width="2"/>
-      <!-- палуба -->
-      <line x1="46" y1="150" x2="520" y2="150" stroke="#16161a" stroke-width="3"/>
+      <!-- главная палуба с седловатостью -->
+      <path d="M 62 146 L 596 132" fill="none" stroke="#16161a" stroke-width="3"/>
       <!-- второе дно -->
-      <line x1="60" y1="208" x2="540" y2="208" stroke="#16161a" stroke-width="1.8"/>
+      <line x1="104" y1="212" x2="540" y2="212" stroke="#16161a" stroke-width="1.8"/>
       <!-- переборки -->
       <g stroke="#1a7f37" stroke-width="2.6">
-        <path d="M150 150 v74 M270 150 v74 M390 150 v74 M480 152 v70"/>
+        <path d="M150 144 v84 M270 141 v87 M390 138 v90 M498 135 v88"/>
       </g>
       <!-- шпангоуты -->
       <g stroke="#155e75" stroke-width="1.2">
-        <path d="M80 150 v74 M100 150 v74 M120 150 v74 M180 150 v74 M210 150 v74 M240 150 v74
-                 M300 150 v74 M330 150 v74 M360 150 v74 M420 150 v74 M450 150 v74 M510 152 v70"/>
+        <path d="M96 145 v83 M120 145 v83 M186 143 v85 M222 142 v86 M246 142 v86
+                 M306 140 v88 M342 139 v89 M366 139 v89 M426 137 v91 M456 136 v90 M528 134 v84"/>
       </g>
-      <!-- надстройка -->
-      <path d="M300 150 L300 108 L420 108 L420 150" fill="#155e75" fill-opacity=".1" stroke="#16161a" stroke-width="2"/>
-      <path d="M340 108 L340 84 L400 84 L400 108" fill="#155e75" fill-opacity=".1" stroke="#16161a" stroke-width="1.6"/>
+      <!-- надстройка в корме и дымовая труба -->
+      <path d="M150 144 L150 100 L262 97 L262 141" fill="#155e75" fill-opacity=".1" stroke="#16161a" stroke-width="2"/>
+      <path d="M178 100 L178 76 L236 75 L236 98" fill="#155e75" fill-opacity=".1" stroke="#16161a" stroke-width="1.6"/>
+      <path d="M284 140 L288 96 L306 95 L304 139 Z" fill="#155e75" fill-opacity=".12" stroke="#16161a" stroke-width="1.6"/>
+      <!-- руль и гребной винт в корме -->
+      <path d="M84 228 L84 250 L96 250 L96 228" fill="none" stroke="#16161a" stroke-width="1.6"/>
+      <line x1="96" y1="240" x2="120" y2="240" stroke="#6b6b74" stroke-width="3"/>
       <!-- ватерлиния -->
-      <line x1="20" y1="196" x2="620" y2="196" stroke="#155e75" stroke-width="1.2" stroke-dasharray="8 5"/>
-      <text x="24" y="192" style="font:11px system-ui;fill:#155e75">ватерлиния</text>
+      <line x1="20" y1="186" x2="620" y2="186" stroke="#155e75" stroke-width="1.2" stroke-dasharray="8 5"/>
+      <text x="24" y="182" style="font:11px system-ui;fill:#155e75">ватерлиния</text>
       <!-- подписи -->
-      <text x="370" y="78" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">рубка — глава 7</text>
-      <text x="360" y="124" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">надстройка — глава 7</text>
-      <text x="200" y="142" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">палубное перекрытие — глава 4</text>
-      <text x="220" y="172" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">бортовое перекрытие — глава 3</text>
-      <text x="230" y="245" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">днищевое перекрытие и двойное дно — глава 2</text>
-      <line x1="230" y1="237" x2="230" y2="212" stroke="#6b6b74" stroke-width=".8"/>
-      <text x="500" y="262" text-anchor="middle" style="font:11px system-ui;fill:#1a7f37">переборки — глава 5</text>
-      <line x1="470" y1="254" x2="392" y2="226" stroke="#1a7f37" stroke-width=".8"/>
-      <text x="596" y="240" text-anchor="end" style="font:11px system-ui;fill:#b3382e">носовая оконечность — глава 6</text>
-      <line x1="560" y1="232" x2="576" y2="212" stroke="#b3382e" stroke-width=".8"/>
-      <text x="44" y="262" text-anchor="middle" style="font:11px system-ui;fill:#b3382e">корма</text>
-      <text x="320" y="288" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">системы набора и шпация — глава 1 · типовые узлы — глава 8 · нормирование по Правилам РМРС — глава 9</text>
-      <text x="320" y="312" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">синие тонкие линии — балки набора, зелёные — главные поперечные переборки</text>
-      <text x="320" y="330" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">штриховая линия — ватерлиния: всё, что ниже, нагружено забортным давлением</text>
+      <text x="207" y="68" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">рубка — глава 7</text>
+      <text x="206" y="120" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">надстройка — глава 7</text>
+      <text x="404" y="126" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">палубное перекрытие — глава 4</text>
+      <text x="416" y="164" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">бортовое перекрытие — глава 3</text>
+      <text x="268" y="252" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">днищевое перекрытие и двойное дно — глава 2</text>
+      <line x1="268" y1="244" x2="268" y2="216" stroke="#6b6b74" stroke-width=".8"/>
+      <text x="452" y="272" text-anchor="middle" style="font:11px system-ui;fill:#1a7f37">переборки — глава 5</text>
+      <line x1="452" y1="264" x2="498" y2="232" stroke="#1a7f37" stroke-width=".8"/>
+      <text x="612" y="256" text-anchor="end" style="font:11px system-ui;fill:#b3382e">носовая оконечность — глава 6</text>
+      <line x1="566" y1="248" x2="574" y2="214" stroke="#b3382e" stroke-width=".8"/>
+      <text x="86" y="270" text-anchor="middle" style="font:11px system-ui;fill:#b3382e">корма: транец,</text>
+      <text x="86" y="284" text-anchor="middle" style="font:11px system-ui;fill:#b3382e">винт и руль</text>
+      <text x="320" y="300" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">системы набора и шпация — глава 1 · типовые узлы — глава 8 · нормирование по Правилам РМРС — глава 9</text>
+      <text x="320" y="318" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">синие тонкие линии — балки набора, зелёные — главные поперечные переборки</text>
+      <text x="320" y="334" text-anchor="middle" style="font:11px system-ui;fill:#6b6b74">штриховая линия — ватерлиния: всё, что ниже, нагружено забортным давлением</text>
     </svg>
     <div class="caption">Курс идёт по этой карте: сначала общий принцип
     расположения балок, затем перекрытие за перекрытием, затем узлы их
