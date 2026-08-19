@@ -1,3 +1,4 @@
+@import url("/base.css");
 /* «Конструкция корпуса судов» — стиль сайта.
    Тема: холодная сталь по светлому фону; фоновый паттерн — набор корпуса
    (шпангоуты + продольные балки + бракеты). */
@@ -15,8 +16,6 @@
   --link: #1f4e5f;
   --shadow: 0 1px 3px rgba(20,20,30,.08), 0 8px 24px rgba(20,20,30,.06);
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--bg);
@@ -25,47 +24,25 @@ body {
   color: var(--ink);
   font: 16px/1.55 Georgia, 'Times New Roman', serif;
 }
-a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { color: var(--accent2); }
-code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; background: var(--chip); padding: 1px 5px; border-radius: 4px; }
 
 .wrap { max-width: min(1180px, 96vw); margin: 0 auto; padding: 0 20px; }
 
 /* шапка */
-header.site {
-  background: var(--paper); border-bottom: 1px solid var(--line);
-  position: sticky; top: 0; z-index: 30;
-}
-header.site .wrap { display: flex; align-items: center; gap: 18px; min-height: 56px; flex-wrap: wrap; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; color: var(--ink); font-size: 17px; }
 .logo svg { display: block; flex: none; }
-nav.top { display: flex; gap: 4px 14px; flex-wrap: wrap; font-size: 15px; font-family: system-ui, sans-serif; }
-nav.top a { text-decoration: none; color: var(--muted); padding: 4px 2px; border-bottom: 2px solid transparent; }
-nav.top a.on, nav.top a:hover { color: var(--ink); border-bottom-color: var(--accent); }
-.nav-drop { position: relative; display: inline-block; }
 .nav-drop .drop {
   display: none; position: absolute; left: -10px; top: 100%; z-index: 40;
   background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
   box-shadow: var(--shadow); padding: 6px 0; min-width: 260px; max-width: 82vw;
 }
-.nav-drop:hover .drop, .nav-drop:focus-within .drop { display: block; }
 .nav-drop .drop a { display: block; padding: 7px 16px; border-bottom: none; white-space: normal; }
 .nav-drop .drop a:hover, .nav-drop .drop a.on { background: #e8f0f2; color: var(--ink); }
 
-h1 { font-size: 30px; line-height: 1.25; margin: 26px 0 6px; }
-h2 { font-size: 23px; margin: 34px 0 8px; }
-h3 { font-size: 18px; margin: 22px 0 6px; }
 h4 { font-size: 16px; margin: 16px 0 4px; }
 .lead { font-size: 18px; color: #3d3d44; max-width: 62em; }
-.small, .muted { color: var(--muted); font-size: 14px; font-family: system-ui, sans-serif; }
 
 /* врезки */
-.note {
-  background: #fbf7ea; border: 1px solid #e7dcb8; border-radius: 10px;
-  padding: 10px 14px; margin: 14px 0; font-size: 15px;
-}
 .tip { background: #eaf2f4; border-color: #c3d8de; }
-.warn { background: #fdeeee; border-color: #eec6c2; }
 .ok { background: #eaf5ec; border-color: #bcdcc6; }
 
 /* блок «Коротко» в начале главы */
@@ -79,25 +56,10 @@ h4 { font-size: 16px; margin: 16px 0 4px; }
 
 /* карточки */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 18px 0; }
-.card {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
-  padding: 16px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px;
-}
-.card h3 { margin: 0; }
-.card p { margin: 0; font-size: 14.5px; color: #46464e; }
-.card .go { margin-top: auto; padding-top: 8px; font-family: system-ui, sans-serif; font-size: 14px; }
-.card.demo { border-left: 4px solid var(--accent); }
 a.card { text-decoration: none; color: inherit; }
 a.card:hover { border-color: var(--accent); }
-a.card h3 { text-decoration: none; }
 
 /* панель с рисунком */
-.panel {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
-  box-shadow: var(--shadow); padding: 14px; margin: 18px 0;
-}
-.panel .caption { font-size: 14px; color: var(--muted); font-family: system-ui, sans-serif; margin-top: 6px; }
-.boards { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
 .boards > div { flex: 1 1 320px; min-width: 0; }
 
 /* SVG-доска */
@@ -122,10 +84,6 @@ table.el tr.pick td { background: #eaf5ec; font-weight: 600; }
   border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--ink);
 }
 .controls input[type=range] { width: 160px; accent-color: var(--accent); }
-.btn {
-  border: 1px solid var(--line); background: var(--paper); border-radius: 8px;
-  padding: 6px 12px; font: 14px system-ui, sans-serif; cursor: pointer; color: var(--ink);
-}
 .btn:hover { border-color: var(--accent); color: var(--accent); }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn.primary:hover { filter: brightness(1.15); color: #fff; }
@@ -133,9 +91,6 @@ table.el tr.pick td { background: #eaf5ec; font-weight: 600; }
 .calc-row { margin: 5px 0; font: 14px system-ui, sans-serif; }
 .calc-row .f { color: #3a3a42; }
 .badge { display: inline-block; border-radius: 999px; padding: 3px 12px; font: 600 13.5px system-ui, sans-serif; margin: 4px 6px 4px 0; }
-.badge.ok { background: #e3f2e7; color: #17632f; border: 1px solid #bcdcc6; }
-.badge.bad { background: #fbe7e5; color: #9c2b22; border: 1px solid #eec6c2; }
-.readout { font: 600 14px ui-monospace, monospace; background: var(--chip); border-radius: 6px; padding: 2px 8px; }
 
 /* шаги разбора задачи */
 .step { margin: 16px 0; padding-left: 16px; border-left: 3px solid var(--chip); }
@@ -154,24 +109,15 @@ details.q > p { margin: 8px 0 4px; }
 .theory-link::before { content: '§ '; color: var(--accent); font-weight: 700; }
 
 /* библиография */
-ol.bib { padding-left: 24px; }
-ol.bib li { margin: 10px 0; }
 ol.bib .bib-url { font: 13px system-ui, sans-serif; }
 
-/* подвал */
-footer.site { border-top: 1px solid var(--line); margin-top: 48px; padding: 22px 0 34px; color: var(--muted); font-size: 14px; font-family: system-ui, sans-serif; }
-footer.site .wrap { display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: space-between; }
-
 @media (max-width: 720px) {
-  h1 { font-size: 24px; }
-  h2 { font-size: 20px; }
-  .boards > div { flex-basis: 100%; }
-  .wrap { padding: 0 14px; }
+    h2 { font-size: 20px; }
+    .wrap { padding: 0 14px; }
 }
 
 /* защита от горизонтального переполнения на узком экране */
 main table { display: block; max-width: 100%; overflow-x: auto; }
-.katex-display { overflow-x: auto; overflow-y: hidden; padding: 2px 0 6px; }
 /* KaTeX прячет MathML-дубль без left/top — пустой бокс растягивает документ */
 .katex-mathml { position: absolute; clip: rect(1px,1px,1px,1px); width: 1px; height: 1px; overflow: hidden; left: 0 !important; top: 0 !important; }
 main .readout, main .caption, main .small { overflow-wrap: anywhere; }
