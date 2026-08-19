@@ -77,9 +77,11 @@ def test_html_integrity(path):
     # целостность локальных ссылок/ассетов
     page_dir = os.path.dirname(path)
     missing = []
+    # общекластерные виджеты лежат в корне домена, а не в site/
+    CLUSTER = {'/hub.js', '/gloss.js', '/mathfmt.js', '/relmet-choice.js'}
     for _tag, _attr, url in c.links:
         target = url.split('#', 1)[0].split('?', 1)[0]
-        if not target:
+        if not target or target in CLUSTER:
             continue
         if target.startswith('/'):
             fp = os.path.join(SITE, target.lstrip('/'))
