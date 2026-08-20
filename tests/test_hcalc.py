@@ -638,6 +638,15 @@ def test_ice_classes_are_ordered():
         'ледовые давления Правил нельзя подменять учебным числом'
 
 
+def test_ice_shell_estimate_is_comparative():
+    """Оценка ледового пояса — сравнительная: во сколько раз связь тяжелеет."""
+    for cls, k in (('Ice2', 1.30), ('Arc4', 1.80)):
+        got = hc("H.iceShellEstimate(8.5, %s)" % json.dumps(cls))
+        assert got['s'] == pytest.approx(8.5 * k, rel=1e-12)
+    assert hc("H.iceShellEstimate(8.5, 'Ice2').sSheet") == 11.5
+    assert hc("H.iceShellEstimate(8.5, 'Arc4').sSheet") == 15.5
+
+
 def test_ice_belt_geometry():
     got = hc("H.iceBelt(3.6, 6.6, 'Ice2')")
     assert got['lower'] == pytest.approx(3.6 - 0.7, abs=1e-9)
@@ -672,6 +681,10 @@ PAGE_NUMBERS = [
     ('p-girder.html', '1 818 273'), ('p-girder.html', '154,2'),
     ('p-girder.html', '182,3'), ('p-girder.html', '221,5'),
     ('p-girder.html', '1 739 100'),
+    # теория обязана печатать те же числа, что и разбор
+    ('t-rules.html', '7,9216'), ('t-rules.html', '1 745 281'),
+    ('t-rules.html', '2,90'), ('t-rules.html', '7,20'),
+    ('t-rules.html', '11,5'),
 ]
 
 
